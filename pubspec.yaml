@@ -1,0 +1,53 @@
+name: saloon_assist
+description: A new Flutter project.
+
+publish_to: 'none'
+version: 8.9.9+10
+# version: 1.0.3+3
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  cached_network_image: ^3.3.0
+  country_code_picker: ^3.0.0
+  currency_picker: ^2.0.17
+  dot_navigation_bar: ^1.0.2
+  dropdown_textfield: ^1.0.8
+  flutter:
+    sdk: flutter
+  flutter_spinkit: ^5.2.0
+  flutter_svg: ^2.0.7
+  fluttertoast: ^8.2.2
+  font_awesome_flutter: ^10.5.0
+  google_fonts: ^6.1.0
+  http: ^1.1.0
+  image_cropper: ^5.0.0
+  image_picker: ^1.0.2
+  intl: ^0.18.1
+  lottie: ^2.6.0
+  open_file: ^3.3.2
+  path_provider: ^2.1.1
+  pdf: ^3.10.4
+  provider: ^6.0.5
+  salomon_bottom_bar: ^3.3.2
+  shared_preferences: ^2.2.0
+  shimmer: ^3.0.0
+  string_validator: ^1.0.0
+
+dev_dependencies:
+  flutter_lints: ^3.0.1
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/applogo.png
+    - assets/logo.png
+    - assets/lottie/
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/open-sans.ttf

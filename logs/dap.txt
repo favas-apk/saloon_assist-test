@@ -1,0 +1,80 @@
+!! PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING !!
+
+Dart Code extension: 3.70.0
+Flutter extension: 3.70.0 (activated)
+
+App: Visual Studio Code
+Version: 1.81.1
+Platform: win
+
+HTTP_PROXY: undefined
+NO_PROXY: undefined
+
+Logging Categories:
+    DAP
+
+Fri Aug 18 2023 [13:04:26 GMT+0530 (India Standard Time)] Log file started
+[1:04:31 PM] [DAP] [Info] <== {"seq":4455,"type":"event","event":"dart.serviceRegistered","body":{"service":"launchDevTools","method":"s2.launchDevTools"}}
+[1:06:24 PM] [DAP] [Info] ==> {"command":"hotReload","arguments":{"debounce":true,"onlyFlutter":true,"reason":"save"},"type":"request","seq":327}
+[1:06:24 PM] [DAP] [Info] <== {"seq":4456,"type":"event","event":"dart.log","body":{"message":"==> [{\"id\":\"151\",\"method\":\"app.restart\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"fullRestart\":false,\"pause\":true,\"reason\":\"save\",\"debounce\":true}}]\r\n","severity":0,"category":9}}
+[1:06:24 PM] [DAP] [Info] <== {"seq":4457,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"313\",\"progressId\":\"hot.reload\",\"message\":\"Performing hot reload...\",\"finished\":false}}]\r\n","severity":0,"category":9}}
+[1:06:24 PM] [DAP] [Info] <== {"seq":4458,"type":"event","event":"dart.progressStart","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-hot.reload","message":"Performing hot reload..."}}
+[1:06:24 PM] [DAP] [Info] <== {"seq":4459,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"314\",\"progressId\":null,\"message\":\"Syncing files to device Redmi Note 9 Pro Max...\",\"finished\":false}}]\r\n","severity":0,"category":9}}
+[1:06:24 PM] [DAP] [Info] <== {"seq":4460,"type":"event","event":"dart.progressStart","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-null","message":"Syncing files to device Redmi Note 9 Pro Max..."}}
+[1:06:25 PM] [DAP] [Info] <== {"seq":4461,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"314\",\"progressId\":null,\"finished\":true}}]\r\n","severity":0,"category":9}}
+[1:06:25 PM] [DAP] [Info] <== {"seq":4462,"type":"event","event":"dart.progressEnd","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-null"}}
+[1:06:25 PM] [DAP] [Info] ==> {"command":"hotReload","arguments":{"debounce":true,"onlyFlutter":true,"reason":"save"},"type":"request","seq":328}
+[1:06:25 PM] [DAP] [Info] <== {"seq":4463,"type":"event","event":"output","body":{"category":"stderr","output":"Reload already in progress, ignoring request"}}
+[1:06:25 PM] [DAP] [Info] <== {"seq":4464,"type":"response","request_seq":328,"command":"hotReload","success":true}
+[1:06:25 PM] [DAP] [Info] <== {"seq":4465,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"313\",\"progressId\":\"hot.reload\",\"finished\":true}}]\r\n","severity":0,"category":9}}
+[1:06:25 PM] [DAP] [Info] <== {"seq":4466,"type":"event","event":"dart.progressEnd","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-hot.reload","message":"Hot Reload complete!"}}
+[1:06:25 PM] [DAP] [Info] <== {"seq":4467,"type":"event","event":"dart.log","body":{"message":"<== Reloaded 1 of 1143 libraries in 1,391ms (compile: 248 ms, reload: 251 ms, reassemble: 334 ms).\r\n","severity":0,"category":9}}
+[1:06:25 PM] [DAP] [Info] <== {"seq":4468,"type":"event","event":"output","body":{"category":"stdout","output":"Reloaded 1 of 1143 libraries in 1,391ms (compile: 248 ms, reload: 251 ms, reassemble: 334 ms).\n"}}
+[1:06:25 PM] [DAP] [Info] <== {"seq":4469,"type":"event","event":"dart.log","body":{"message":"<== [{\"id\":\"151\",\"result\":{\"code\":0,\"message\":\"Reloaded 1 of 1143 libraries\"}}]\r\n","severity":0,"category":9}}
+[1:06:25 PM] [DAP] [Info] <== {"seq":4470,"type":"response","request_seq":327,"command":"hotReload","success":true}
+[1:06:26 PM] [DAP] [Info] ==> {"command":"hotReload","arguments":{"debounce":true,"onlyFlutter":true,"reason":"save"},"type":"request","seq":329}
+[1:06:26 PM] [DAP] [Info] <== {"seq":4471,"type":"event","event":"dart.log","body":{"message":"==> [{\"id\":\"152\",\"method\":\"app.restart\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"fullRestart\":false,\"pause\":true,\"reason\":\"save\",\"debounce\":true}}]\r\n","severity":0,"category":9}}
+[1:06:26 PM] [DAP] [Info] <== {"seq":4472,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"315\",\"progressId\":\"hot.reload\",\"message\":\"Performing hot reload...\",\"finished\":false}}]\r\n","severity":0,"category":9}}
+[1:06:26 PM] [DAP] [Info] <== {"seq":4473,"type":"event","event":"dart.progressStart","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-hot.reload","message":"Performing hot reload..."}}
+[1:06:26 PM] [DAP] [Info] ==> {"command":"hotReload","arguments":{"debounce":true,"onlyFlutter":true,"reason":"save"},"type":"request","seq":330}
+[1:06:26 PM] [DAP] [Info] <== {"seq":4474,"type":"event","event":"output","body":{"category":"stderr","output":"Reload already in progress, ignoring request"}}
+[1:06:26 PM] [DAP] [Info] <== {"seq":4475,"type":"response","request_seq":330,"command":"hotReload","success":true}
+[1:06:26 PM] [DAP] [Info] <== {"seq":4476,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"316\",\"progressId\":null,\"message\":\"Syncing files to device Redmi Note 9 Pro Max...\",\"finished\":false}}]\r\n","severity":0,"category":9}}
+[1:06:26 PM] [DAP] [Info] <== {"seq":4477,"type":"event","event":"dart.progressStart","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-null","message":"Syncing files to device Redmi Note 9 Pro Max..."}}
+[1:06:26 PM] [DAP] [Info] <== {"seq":4478,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"316\",\"progressId\":null,\"finished\":true}}]\r\n","severity":0,"category":9}}
+[1:06:26 PM] [DAP] [Info] <== {"seq":4479,"type":"event","event":"dart.progressEnd","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-null"}}
+[1:06:27 PM] [DAP] [Info] <== {"seq":4480,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"315\",\"progressId\":\"hot.reload\",\"finished\":true}}]\r\n","severity":0,"category":9}}
+[1:06:27 PM] [DAP] [Info] <== {"seq":4481,"type":"event","event":"dart.progressEnd","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-hot.reload","message":"Hot Reload complete!"}}
+[1:06:27 PM] [DAP] [Info] <== {"seq":4482,"type":"event","event":"dart.log","body":{"message":"<== Reloaded 1 of 1143 libraries in 637ms (compile: 57 ms, reload: 200 ms, reassemble: 174 ms).\r\n","severity":0,"category":9}}
+[1:06:27 PM] [DAP] [Info] <== {"seq":4483,"type":"event","event":"output","body":{"category":"stdout","output":"Reloaded 1 of 1143 libraries in 637ms (compile: 57 ms, reload: 200 ms, reassemble: 174 ms).\n"}}
+[1:06:27 PM] [DAP] [Info] <== {"seq":4484,"type":"event","event":"dart.log","body":{"message":"<== [{\"id\":\"152\",\"result\":{\"code\":0,\"message\":\"Reloaded 1 of 1143 libraries\"}}]\r\n","severity":0,"category":9}}
+[1:06:27 PM] [DAP] [Info] <== {"seq":4485,"type":"response","request_seq":329,"command":"hotReload","success":true}
+[1:06:37 PM] [DAP] [Info] ==> {"command":"hotReload","arguments":{"debounce":true,"onlyFlutter":true,"reason":"save"},"type":"request","seq":331}
+[1:06:37 PM] [DAP] [Info] <== {"seq":4486,"type":"event","event":"dart.log","body":{"message":"==> [{\"id\":\"153\",\"method\":\"app.restart\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"fullRestart\":false,\"pause\":true,\"reason\":\"save\",\"debounce\":true}}]\r\n","severity":0,"category":9}}
+[1:06:37 PM] [DAP] [Info] <== {"seq":4487,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"317\",\"progressId\":\"hot.reload\",\"message\":\"Performing hot reload...\",\"finished\":false}}]\r\n","severity":0,"category":9}}
+[1:06:37 PM] [DAP] [Info] <== {"seq":4488,"type":"event","event":"dart.progressStart","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-hot.reload","message":"Performing hot reload..."}}
+[1:06:37 PM] [DAP] [Info] <== {"seq":4489,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"318\",\"progressId\":null,\"message\":\"Syncing files to device Redmi Note 9 Pro Max...\",\"finished\":false}}]\r\n","severity":0,"category":9}}
+[1:06:37 PM] [DAP] [Info] <== {"seq":4490,"type":"event","event":"dart.progressStart","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-null","message":"Syncing files to device Redmi Note 9 Pro Max..."}}
+[1:06:37 PM] [DAP] [Info] <== {"seq":4491,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"318\",\"progressId\":null,\"finished\":true}}]\r\n","severity":0,"category":9}}
+[1:06:37 PM] [DAP] [Info] <== {"seq":4492,"type":"event","event":"dart.progressEnd","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-null"}}
+[1:06:38 PM] [DAP] [Info] <== {"seq":4493,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"317\",\"progressId\":\"hot.reload\",\"finished\":true}}]\r\n","severity":0,"category":9}}
+[1:06:38 PM] [DAP] [Info] <== {"seq":4494,"type":"event","event":"dart.progressEnd","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-hot.reload","message":"Hot Reload complete!"}}
+[1:06:38 PM] [DAP] [Info] <== {"seq":4495,"type":"event","event":"dart.log","body":{"message":"<== Reloaded 1 of 1143 libraries in 581ms (compile: 69 ms, reload: 202 ms, reassemble: 174 ms).\r\n","severity":0,"category":9}}
+[1:06:38 PM] [DAP] [Info] <== {"seq":4496,"type":"event","event":"output","body":{"category":"stdout","output":"Reloaded 1 of 1143 libraries in 581ms (compile: 69 ms, reload: 202 ms, reassemble: 174 ms).\n"}}
+[1:06:38 PM] [DAP] [Info] <== {"seq":4497,"type":"event","event":"dart.log","body":{"message":"<== [{\"id\":\"153\",\"result\":{\"code\":0,\"message\":\"Reloaded 1 of 1143 libraries\"}}]\r\n","severity":0,"category":9}}
+[1:06:38 PM] [DAP] [Info] <== {"seq":4498,"type":"response","request_seq":331,"command":"hotReload","success":true}
+[1:06:39 PM] [DAP] [Info] ==> {"command":"hotReload","arguments":{"debounce":true,"onlyFlutter":true,"reason":"save"},"type":"request","seq":332}
+[1:06:39 PM] [DAP] [Info] <== {"seq":4499,"type":"event","event":"dart.log","body":{"message":"==> [{\"id\":\"154\",\"method\":\"app.restart\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"fullRestart\":false,\"pause\":true,\"reason\":\"save\",\"debounce\":true}}]\r\n","severity":0,"category":9}}
+[1:06:39 PM] [DAP] [Info] <== {"seq":4500,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"319\",\"progressId\":\"hot.reload\",\"message\":\"Performing hot reload...\",\"finished\":false}}]\r\n","severity":0,"category":9}}
+[1:06:39 PM] [DAP] [Info] <== {"seq":4501,"type":"event","event":"dart.progressStart","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-hot.reload","message":"Performing hot reload..."}}
+[1:06:39 PM] [DAP] [Info] <== {"seq":4502,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"320\",\"progressId\":null,\"message\":\"Syncing files to device Redmi Note 9 Pro Max...\",\"finished\":false}}]\r\n","severity":0,"category":9}}
+[1:06:39 PM] [DAP] [Info] <== {"seq":4503,"type":"event","event":"dart.progressStart","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-null","message":"Syncing files to device Redmi Note 9 Pro Max..."}}
+[1:06:39 PM] [DAP] [Info] <== {"seq":4504,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"320\",\"progressId\":null,\"finished\":true}}]\r\n","severity":0,"category":9}}
+[1:06:39 PM] [DAP] [Info] <== {"seq":4505,"type":"event","event":"dart.progressEnd","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-null"}}
+[1:06:40 PM] [DAP] [Info] <== {"seq":4506,"type":"event","event":"dart.log","body":{"message":"<== [{\"event\":\"app.progress\",\"params\":{\"appId\":\"f1320ea2-59a7-47b9-a8c2-b31a8de61405\",\"id\":\"319\",\"progressId\":\"hot.reload\",\"finished\":true}}]\r\n","severity":0,"category":9}}
+[1:06:40 PM] [DAP] [Info] <== {"seq":4507,"type":"event","event":"dart.progressEnd","body":{"progressId":"flutter-f1320ea2-59a7-47b9-a8c2-b31a8de61405-hot.reload","message":"Hot Reload complete!"}}
+[1:06:40 PM] [DAP] [Info] <== {"seq":4508,"type":"event","event":"dart.log","body":{"message":"<== Reloaded 1 of 1143 libraries in 577ms (compile: 41 ms, reload: 197 ms, reassemble: 174 ms).\r\n","severity":0,"category":9}}
+[1:06:40 PM] [DAP] [Info] <== {"seq":4509,"type":"event","event":"output","body":{"category":"stdout","output":"Reloaded 1 of 1143 libraries in 577ms (compile: 41 ms, reload: 197 ms, reassemble: 174 ms).\n"}}
+[1:06:40 PM] [DAP] [Info] <== {"seq":4510,"type":"event","event":"dart.log","body":{"message":"<== [{\"id\":\"154\",\"result\":{\"code\":0,\"message\":\"Reloaded 1 of 1143 libraries\"}}]\r\n","severity":0,"category":9}}
+[1:06:40 PM] [DAP] [Info] <== {"seq":4511,"type":"response","request_seq":332,"command":"hotReload","success":true}
+Fri Aug 18 2023 [13:06:45 GMT+0530 (India Standard Time)] Log file ended

@@ -1,0 +1,35 @@
+!! PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING !!
+
+Dart Code extension: 3.70.0
+Flutter extension: 3.70.0 (activated)
+
+App: Visual Studio Code
+Version: 1.81.1
+Platform: win
+
+HTTP_PROXY: undefined
+NO_PROXY: undefined
+
+Logging Categories:
+    FlutterDaemon
+
+Fri Aug 18 2023 [13:04:26 GMT+0530 (India Standard Time)] Log file started
+[1:04:26 PM] [FlutterDaemon] [Info] Spawning C:\flutter_windows_3.13.0-stable\flutter\bin\flutter.bat with args ["daemon"]
+[1:04:26 PM] [FlutterDaemon] [Info] ..  in C:\flutter_windows_3.13.0-stable\flutter
+[1:04:26 PM] [FlutterDaemon] [Info] ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
+[1:04:26 PM] [FlutterDaemon] [Info]     PID: 12172
+[1:04:35 PM] [FlutterDaemon] [Info] <== [{"event":"daemon.connected","params":{"version":"0.6.1","pid":11532}}]
+[1:04:35 PM] [FlutterDaemon] [Info] ==> [{"id":"1","method":"device.enable"}]
+[1:04:35 PM] [FlutterDaemon] [Info] ==> [{"id":"2","method":"emulator.getEmulators"}]
+[1:04:36 PM] [FlutterDaemon] [Info] <== [{"event":"daemon.logMessage","params":{"level":"status","message":"Starting device daemon..."}}]
+[1:04:36 PM] [FlutterDaemon] [Info] <== [{"id":"1"}]
+[1:04:37 PM] [FlutterDaemon] [Info] <== [{"id":"2","result":[{"id":"Pixel_2_API_29","name":"Pixel 2 API 29","category":"mobile","platformType":"android"},{"id":"Pixel_5_API_29","name":"Pixel 5 API 29","category":"mobile","platformType":"android"}]}]
+[1:04:40 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"windows","name":"Windows","platform":"windows-x64","emulator":false,"category":"desktop","platformType":"windows","ephemeral":false,"emulatorId":null,"sdk":"Microsoft Windows [Version 10.0.19045.3208]","capabilities":{"hotReload":true,"hotRestart":true,"screenshot":false,"fastStart":false,"flutterExit":true,"hardwareRendering":true,"startPaused":true}}}]
+[1:04:40 PM] [FlutterDaemon] [Info] ==> [{"id":"3","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"E:\\flutter_projects\\saloon_assist"}}]
+[1:04:41 PM] [FlutterDaemon] [Info] <== [{"id":"3","result":{"platforms":["linux","macos","windows","ios","android","web"]}}]
+[1:04:41 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"82cc528e","name":"Redmi Note 9 Pro Max","platform":"android-arm64","emulator":false,"category":"mobile","platformType":"android","ephemeral":true,"emulatorId":null,"sdk":"Android 12 (API 31)","capabilities":{"hotReload":true,"hotRestart":true,"screenshot":true,"fastStart":true,"flutterExit":true,"hardwareRendering":true,"startPaused":true}}}]
+[1:04:41 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"chrome","name":"Chrome","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null,"sdk":"Google Chrome 116.0.5845.96","capabilities":{"hotReload":true,"hotRestart":true,"screenshot":false,"fastStart":false,"flutterExit":false,"hardwareRendering":true,"startPaused":true}}}]
+[1:04:41 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"edge","name":"Edge","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null,"sdk":"Microsoft Edge 115.0.1901.183","capabilities":{"hotReload":true,"hotRestart":true,"screenshot":false,"fastStart":false,"flutterExit":false,"hardwareRendering":true,"startPaused":true}}}]
+[1:06:45 PM] [FlutterDaemon] [Info] ==> [{"id":"4","method":"daemon.shutdown"}]
+[1:06:45 PM] [FlutterDaemon] [Info] <== [{"id":"4"}]
+Fri Aug 18 2023 [13:06:45 GMT+0530 (India Standard Time)] Log file ended
