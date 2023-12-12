@@ -20,6 +20,8 @@ import 'package:saloon_assist/models/staffProofModel.dart';
 import 'package:saloon_assist/widgets/progressDialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../responsive.dart';
+
 class ShopController extends ChangeNotifier {
   List<Images> defaultimages = [];
   bool isBottomSheetOpened = false;
@@ -28,6 +30,8 @@ class ShopController extends ChangeNotifier {
     isBottomSheetOpened = true;
     notifyListeners();
   }
+
+
 
   ShopModel? model;
   String? chairName;
@@ -338,28 +342,75 @@ class ShopController extends ChangeNotifier {
   }
 
   Future pickImage(ImageSource source, BuildContext context) async {
-    final pickedImage = await ImagePicker().pickImage(source: source);
-    await ProgressDialog.show(context: context, status: 'Please wait');
-    if (pickedImage != null) {
-      CroppedFile? cropped = await ImageCropper().cropImage(
-        sourcePath: pickedImage.path,
-        aspectRatio: const CropAspectRatio(ratioX: 1, ratioY: 1),
-        compressQuality: 50,
-        maxWidth: 700,
-        maxHeight: 700,
-        compressFormat: ImageCompressFormat.jpg,
-      );
-      if (cropped != null) {
-        final selected = File(cropped.path);
-        imageFile = File(selected.path);
-        staffImage = base64Encode(selected.readAsBytesSync());
-        ProgressDialog.hide(context);
-      } else {
+
+    bool isMobile = Responsive.isMobile(context);
+    bool isTab = Responsive.isTablet(context);
+
+
+      final pickedImage = await ImagePicker().pickImage(source: source);
+
+      await ProgressDialog.show(context: context, status: 'Please wait');
+
+      if (pickedImage != null) {
+
+              if(isTab  || isMobile)
+                {
+
+                  CroppedFile? cropped = await ImageCropper().cropImage(
+                    sourcePath: pickedImage.path,
+                    aspectRatio: const CropAspectRatio(ratioX: 1, ratioY: 1),
+                    compressQuality: 50,
+                    maxWidth: 700,
+                    maxHeight: 700,
+                    compressFormat: ImageCompressFormat.jpg,
+                  );
+
+
+
+                  if (cropped != null) {
+                    final selected = File(cropped.path);
+                    imageFile = File(selected.path);
+                    staffImage = base64Encode(selected.readAsBytesSync());
+                    ProgressDialog.hide(context);
+                  } else {
+                    Fluttertoast.showToast(msg: "Failed to add image");
+                  }
+
+
+                }
+              else
+                {
+                  ProgressDialog.hide(context);
+                  final selected = File(pickedImage .path);
+                  imageFile = File(selected.path);
+                  staffImage = base64Encode(selected.readAsBytesSync());
+                  ProgressDialog.hide(context);
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      }
+      else {
         Fluttertoast.showToast(msg: "Failed to add image");
       }
-    } else {
-      Fluttertoast.showToast(msg: "Failed to add image");
-    }
+
+
+
+
+
+
 
     ProgressDialog.hide(context);
     notifyListeners();
@@ -511,7 +562,7 @@ class ShopController extends ChangeNotifier {
     required String? newimg,
     required String staffid,
   }) async {
-    ProgressDialog.show(context: context, status: 'Updating details');
+    ProgressDialog.show(context: context, status: 'Updating details1');
     SharedPreferences preferences = await SharedPreferences.getInstance();
     var id = preferences.getString('ShopId');
     dynamic result;
@@ -541,8 +592,10 @@ class ShopController extends ChangeNotifier {
     ProgressDialog.hide(context);
     if (result[0]['status']) {
       staffProofs = [];
-      Fluttertoast.showToast(msg: 'updated $newstaffName')
-          .then((value) async => await getData())
+      // Fluttertoast.showToast(msg: 'updated12 $newstaffName')
+      //     .then((value) async =>
+
+      await getData()
           .then(
             (value) => clearProofDetails().then(
               (value) => clearStaffDetails(),

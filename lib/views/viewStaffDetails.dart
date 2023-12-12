@@ -119,6 +119,8 @@ class ViewStaffDetails extends StatelessWidget {
                   ],
                 ),
                 const Expanded(child: SizedBox()),
+
+
                 SizedBox(
                   height: isMobile ? 30 : 45,
                   child: OutlinedButton(
@@ -163,6 +165,7 @@ class ViewStaffDetails extends StatelessWidget {
                     child: const Text('EDIT'),
                   ),
                 )
+
               ],
             ),
           ),

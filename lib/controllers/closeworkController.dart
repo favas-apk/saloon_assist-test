@@ -1,9 +1,11 @@
 // ignore_for_file: file_names, use_build_context_synchronously
 
 import 'dart:developer';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:ftoast/ftoast.dart' as myToast;
 
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+
 import 'package:intl/intl.dart';
 import 'package:open_file/open_file.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +16,8 @@ import 'package:saloon_assist/models/billItemModel.dart';
 import 'package:saloon_assist/models/billModel.dart';
 import 'package:saloon_assist/widgets/pdf.dart';
 import 'package:saloon_assist/widgets/progressDialog.dart';
+
+// import '../responsive.dart';
 
 class CloseWorkController extends ChangeNotifier {
   String? customerName;
@@ -287,6 +291,10 @@ class CloseWorkController extends ChangeNotifier {
     required String startTime,
     required String endTime,
   }) async {
+
+  //   bool isMobile = Responsive.isMobile(context);
+    // bool isTab = Responsive.isTablet(context);
+
     ProgressDialog.show(context: context, status: "Saving Bill");
     /* 
     SharedPreferences preferences = await SharedPreferences.getInstance();
@@ -329,11 +337,14 @@ class CloseWorkController extends ChangeNotifier {
             date: DateFormat('dd MMM yyyy').format(
               DateTime.now(),
             ));
-        OpenFile.open(path);
+   //     OpenFile.open(path);
         ProgressDialog.hide(context);
 
-        await Fluttertoast.showToast(msg: 'Bill Added')
-            .then((value) => clear())
+
+
+
+      myToast.FToast.toast(context, msg: 'Bill Added');
+        await    clear()
             .then((value) => Provider.of<ShopController>(context, listen: false)
                 .changeChairStatus(
                     context: context,

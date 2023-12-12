@@ -1,5 +1,5 @@
 // ignore_for_file: file_names, use_build_context_synchronously
-
+import 'package:ftoast/ftoast.dart' as myToast;
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
@@ -90,23 +90,25 @@ items=[{"ItemName":"Food Exoenses","Amount":100}] */
     if (result[0]["status"]) {
       if (Provider.of<ShopController>(context, listen: false).model!.userType ==
           "SHOP-ADMIN") {
-        Fluttertoast.showToast(msg: "Expense Added").then(
-          (value) => Navigator.of(context).pushReplacement(
+
+        myToast.FToast.toast(context, msg: 'Expense Added');
+           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
               builder: (ct) => BottomNavigation(page: 3),
             ),
-          ),
-        );
+          );
+
       } else {
-        Fluttertoast.showToast(msg: "Expense Added").then(
-          (value) => Navigator.of(context).pushReplacement(
+        myToast.FToast.toast(context, msg: 'Expense Added').
+
+ Navigator.of(context).pushReplacement(
             MaterialPageRoute(
               builder: (ct) => StaffHomeScreen(
                 page: 1,
               ),
             ),
-          ),
-        );
+          );
+
       }
     } else {
       Fluttertoast.showToast(msg: result[0]['result']);

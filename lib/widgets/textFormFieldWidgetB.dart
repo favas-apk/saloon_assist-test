@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class TextFormFieldWidget extends StatelessWidget {
-  TextFormFieldWidget(
+class TextFormFieldWidgetB extends StatelessWidget {
+  TextFormFieldWidgetB(
       {
         super.key,
       required this.hintText,
@@ -17,7 +17,7 @@ class TextFormFieldWidget extends StatelessWidget {
       this.initialvalue,
       this.controller,
       this.readonly = false,
-
+        this.formatter,
 
 
       }) ;
@@ -31,7 +31,7 @@ class TextFormFieldWidget extends StatelessWidget {
   TextEditingController? controller;
   IconData? icon;
   bool readonly;
-
+  List<TextInputFormatter>? formatter;
 
 
   @override
@@ -74,6 +74,9 @@ class TextFormFieldWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
       ),
+      inputFormatters:[
+        //DecimalTextInputFormatter(),DecimalTextInputFormatterB(decimalRange: 2),
+        FilteringTextInputFormatter.allow(RegExp('[0123456789]')),],
 
     );
   }

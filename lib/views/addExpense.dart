@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:saloon_assist/constants/colors.dart';
@@ -10,6 +11,8 @@ import 'package:saloon_assist/controllers/shopController.dart';
 import 'package:saloon_assist/responsive.dart';
 import 'package:saloon_assist/widgets/textFormFieldWidget.dart';
 
+import '../widgets/textFormFieldWidgetB.dart';
+
 class AddExpense extends StatefulWidget {
   const AddExpense({super.key});
 
@@ -18,6 +21,7 @@ class AddExpense extends StatefulWidget {
 }
 
 class _AddExpenseState extends State<AddExpense> {
+  final RegExp _onlyNumbers = RegExp(r'^[0-9]*$');
   TextEditingController dateinput = TextEditingController();
   TextEditingController expenseReason = TextEditingController();
   TextEditingController amount = TextEditingController();
@@ -117,18 +121,37 @@ class _AddExpenseState extends State<AddExpense> {
                       ),
                     ),
                   ), */
-                  TextFormFieldWidget(
+                  TextFormFieldWidgetB(
+
                     validator: (v) {
                       if (v == "0" || v!.isEmpty) {
                         return "expense amount can't be empty";
                       } else {
+
                         return null;
+
                       }
+                    
+                      
                     },
                     controller: amount,
+
                     type: TextInputType.number,
+
+
+
+
+
                     hintText: 'Expense Amount',
                   ),
+
+                  TextField(
+                    inputFormatters:[
+                      FilteringTextInputFormatter.allow(RegExp('[0123456789]')),],
+                  ),
+
+
+
                   space(context),
                   TextFormFieldWidget(
                     controller: expenseReason,

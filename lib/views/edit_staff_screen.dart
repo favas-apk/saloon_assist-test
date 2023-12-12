@@ -376,6 +376,9 @@ class _EditStaffScreenState extends State<EditStaffScreen> {
                                                                               ListTile(
                                                                             onTap:
                                                                                 () async {
+
+
+
                                                                               await value.pickImage(ImageSource.gallery, context).then(
                                                                                     (value) => Navigator.pop(context),
                                                                                   );
@@ -448,7 +451,7 @@ class _EditStaffScreenState extends State<EditStaffScreen> {
                                                               );
                                                             },
                                                             child: const Text(
-                                                              'Update',
+                                                              'Update2',
                                                               style: TextStyle(
                                                                   color: Colors
                                                                       .red),
@@ -755,7 +758,8 @@ class _EditStaffScreenState extends State<EditStaffScreen> {
                                               backgroundColor: primaryColor,
                                               shape: const StadiumBorder(),
                                             ),
-                                            onPressed: widget.isUpdate
+                                            onPressed:
+                                            widget.isUpdate
                                                 ? () {
                                                     Navigator.push(
                                                       context,
@@ -1135,6 +1139,7 @@ class _EditStaffScreenState extends State<EditStaffScreen> {
                                                                                   Card(
                                                                                     child: ListTile(
                                                                                       onTap: () async {
+
                                                                                         await value.pickImage(ImageSource.gallery, context).then(
                                                                                               (value) => Navigator.pop(context),
                                                                                             );
@@ -1155,6 +1160,7 @@ class _EditStaffScreenState extends State<EditStaffScreen> {
                                                                                   Card(
                                                                                       child: ListTile(
                                                                                     onTap: () async {
+
                                                                                       await value.pickImage(ImageSource.camera, context).then(
                                                                                             (value) => Navigator.pop(context),
                                                                                           );
@@ -1198,11 +1204,12 @@ class _EditStaffScreenState extends State<EditStaffScreen> {
                                                                         );
                                                                       },
                                                                       child: const Text(
-                                                                        'Update',
+                                                                        'Update1',
                                                                         style: TextStyle(
                                                                             color:
                                                                                 Colors.red),
-                                                                      )),
+                                                                      )
+                                                                  ),
                                                                 )
                                                               ],
                                                             ),
@@ -1517,6 +1524,9 @@ class _EditStaffScreenState extends State<EditStaffScreen> {
                                             shape: const StadiumBorder(),
                                           ),
                                           onPressed: () {
+
+                                            print(" isupdate is ${widget.isUpdate}");
+
                                             Navigator.push(
                                               context,
                                               MaterialPageRoute(
@@ -1588,7 +1598,7 @@ class _EditStaffScreenState extends State<EditStaffScreen> {
                                                 }, */
                                           ,
                                           child: Text(
-                                            'NEXT',
+                                            'NEXT1',
                                             style: whiteText,
                                           ),
                                         ),

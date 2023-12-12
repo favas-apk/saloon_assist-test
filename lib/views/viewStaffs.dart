@@ -39,6 +39,8 @@ class _ViewStaffsState extends State<ViewStaffs> {
 
 
   Widget _buildListView(BuildContext context) {
+
+    print("in mobile ");
     return Consumer<ShopController>(
       builder: (context, data, child) {
         return ListView.builder(
@@ -108,6 +110,125 @@ class _ViewStaffsState extends State<ViewStaffs> {
     );
   }
 
+  Widget _buildGridView(BuildContext context, bool isTab,bool isMobile) {
+    print("not mobile");
+    return Consumer<ShopController>(
+      builder: (context, data, child) {
+        return GridView.builder(
+          physics: const BouncingScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: data.model!.staffs.length,
+          padding: const EdgeInsets.all(8),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: isTab ? 4 : 6,
+            childAspectRatio: 1,
+            mainAxisExtent: isTab
+                ? MediaQuery.of(context).size.height * .20
+                : MediaQuery.of(context).size.height * .25,
+            crossAxisSpacing: 2,
+            mainAxisSpacing: 2,
+          ),
+          itemBuilder: (context, index) {
+            var currentData = data.model!.staffs[index];
+            return Card(
+              elevation: 1,
+              child: InkWell(
+                borderRadius: BorderRadius.circular(10),
+                onTap: () {
+
+                  print("clicked on staff   istab? $isTab");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (ctx) => ViewStaffDetails(
+                        proofData: getProof(
+                          currentData.staffId,
+                          data.model!.proofs,
+                        ),
+                        data: currentData,
+                      ),
+                    ),
+                  );
+                },
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const Expanded(
+                      child: SizedBox(),
+                    ),
+                    CircleAvatar(
+                      backgroundColor: primaryColor,
+                      radius: isMobile || isTab
+                          ? MediaQuery.of(context).size.height * .035
+                          : MediaQuery.of(context).size.height * .030,
+                      child: CircleAvatar(
+                        radius: isMobile || isTab
+                            ? MediaQuery.of(context).size.height * .04
+                            : MediaQuery.of(context).size.height * .038,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(80),
+                          child:
+                          CachedNetworkImage(
+                            placeholder: (context, url) => const Image(
+                              image: AssetImage('assets/default.png'),
+                            ),
+                            imageUrl: "$imageUrl${currentData.img}?v=${DateTime.now().millisecondsSinceEpoch}",
+                            // imageUrl:
+                            // "$imageUrl${currentData.img}?v=$random",
+
+                          ),
+
+            //               Image.network(
+            //
+            //                 "$imageUrl${currentData.img}?v=$random",
+            //
+            // loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+            //   if (loadingProgress == null) {
+            //     return child;
+            //   } else {
+            //     return const Center(
+            //       child:  Image(
+            //             image: AssetImage('assets/default.png'),
+            //            ),
+            //     );
+            //   }
+            // },
+            //
+            //
+            //
+            //
+            //               ),
+
+
+                        ),
+                      ),
+                    ),
+                    divider,
+                    Center(
+                      child: Text(
+                        currentData.staffName.toUpperCase(),
+                        style: titleStyle,
+                      ),
+                    ),
+                    Center(
+                      child: Text(
+                        currentData.mobile.toUpperCase(),
+                        style: titleStyle,
+                      ),
+                    ),
+                    const Expanded(
+                      child: SizedBox(),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
 
 
   @override
@@ -115,34 +236,7 @@ class _ViewStaffsState extends State<ViewStaffs> {
     bool isMobile = Responsive.isMobile(context);
     bool isTab = Responsive.isTablet(context);
     return Scaffold(
-        /*   floatingActionButton: isMobile
-            ? FloatingActionButton(
-                tooltip: 'Add new staff',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (ctx) => AddStaffScreen(),
-                    ),
-                  );
-                },
-                child: const Icon(Icons.group_add_rounded),
-              )
-            : FloatingActionButton(
-                tooltip: 'Add staff',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (ctx) => AddStaffScreen(),
-                    ),
-                  );
-                },
-                child: const FaIcon(
-                  FontAwesomeIcons.userPlus,
-                  // size: 50,
-                ),
-              ), */
+
         body: Column(
       children: [
 
@@ -150,198 +244,13 @@ class _ViewStaffsState extends State<ViewStaffs> {
           child: context.read<ShopController>().model != null
               ? context.read<ShopController>().model!.staffs.isNotEmpty ? isMobile ?
 
-          Consumer<ShopController>(
-                          builder: (context, data, child) {
-                          return ListView.builder(
-                              itemCount: data.model!.staffs.length,
-                              physics: const BouncingScrollPhysics(),
-                              itemBuilder: (context, index) {
-                                var currentData = data.model!.staffs[index];
-                                // var imageurl =
-                                //     "$imageUrl${currentData.img}?v=$random";
-                                // print(imageurl);
-                                return Card(
-                                  color: Colors.white,
-                                  elevation: 2,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: ListTile(
-                                    tileColor: Colors.white,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    onTap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (ctx) => ViewStaffDetails(
-                                            data: currentData,
-                                            proofData: getProof(
-                                                currentData.staffId,
-                                                data.model!.proofs),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                    trailing: const SizedBox(
-                                      // width: ,
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Icon(
-                                            Icons.arrow_forward_ios_rounded,
-                                            color: Colors.black12,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    // onTap: () {},
-                                    leading: CircleAvatar(
-                                      // key:
-                                      //     ValueKey("$imageUrl${currentData.img}?v=1"),
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        child: CachedNetworkImage(
-                                            placeholder: (context, url) =>
-                                                const Image(
-                                                  image: AssetImage(
-                                                      'assets/default.png'),
-                                                ),
-                                            imageUrl:
-                                                "$imageUrl${currentData.img}?v=$random"),
-                                      ),
-                                    ),
-                                    title: Text(
-                                      currentData.staffName.toUpperCase(),
-                                      style: const TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    subtitle: Text(currentData.mobile),
-                                  ),
-                                );
-                              });
-                        })
+          _buildListView(context)
 
                       :
 
-          Consumer<ShopController>(
-                          builder: (context, data, child) {
-                          return GridView.builder(
-                            physics: const BouncingScrollPhysics(),
-                            shrinkWrap: true,
-                            itemCount: data.model!.staffs.length,
-                            padding: const EdgeInsets.all(8),
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: isTab ? 4 : 6,
-                              childAspectRatio: 1,
-                              mainAxisExtent: isTab || isMobile
-                                  ? MediaQuery.of(context).size.height * .20
-                                  : MediaQuery.of(context).size.height * .25,
-                              crossAxisSpacing: 2,
-                              mainAxisSpacing: 2,
-                            ),
-                            itemBuilder: (context, index) {
-                              var currentData = data.model!.staffs[index];
-                              return Card(
-                                elevation: 1,
-                                child: InkWell(
-                                  borderRadius: BorderRadius.circular(10),
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (ctx) => ViewStaffDetails(
-                                          proofData: getProof(
-                                              currentData.staffId,
-                                              data.model!.proofs),
-                                          data: currentData,
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      const Expanded(
-                                        child: SizedBox(),
-                                      ),
-                                      /* Image(
-                                  // color: Colors.black12,
-                                  height:
-                                      MediaQuery.of(context).size.height * .08,
-                                  image: const AssetImage(
-                                    'assets/default.png',
-                                  ),
-                                ), */
-                                      CircleAvatar(
-                                        backgroundColor: primaryColor,
-                                        radius: isMobile || isTab
-                                            ? MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                .035
-                                            : MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                .030,
-                                        child: CircleAvatar(
-                                            radius: isMobile || isTab
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .height *
-                                                    .04
-                                                : MediaQuery.of(context)
-                                                        .size
-                                                        .height *
-                                                    .038,
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(80),
-                                              child: CachedNetworkImage(
-                                                  placeholder: (context, url) =>
-                                                      const Image(
-                                                        image: AssetImage(
-                                                            'assets/default.png'),
-                                                      ),
-                                                  imageUrl:
-                                                      "$imageUrl${currentData.img}?v=$random"),
-                                            )),
-                                      ),
-                                      divider,
-                                      /*  Center(
-                                  child: Text(
-                                    'ID :${currentData.staffId.toUpperCase()}',
-                                    style: titleStyle,
-                                  ),
-                                ), */
-                                      Center(
-                                        child: Text(
-                                          currentData.staffName.toUpperCase(),
-                                          style: titleStyle,
-                                        ),
-                                      ),
-                                      Center(
-                                        child: Text(
-                                          currentData.mobile.toUpperCase(),
-                                          style: titleStyle,
-                                        ),
-                                      ),
-                                      const Expanded(
-                                        child: SizedBox(),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              );
-                            },
-                          );
-                        })
+          _buildGridView(context,isTab,isMobile)
+
+
                   : Center(
                       child: LottieBuilder.asset('assets/lottie/noresult.json'),
                     )
